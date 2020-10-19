@@ -6,13 +6,8 @@ class Solution {
         System.out.println(new Solution().totalNQueens(5));
     }
     public int totalNQueens(int n) {
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            int[][] chessboard = new int[n][n];
-            setChessboard(0, i, chessboard);
-            count += next(1, chessboard, n);
-        }
-        return count;
+        int[][] chessboard = new int[n][n];
+        return next(0, chessboard, n);
     }
 
     private int next(int countQueen, int[][] chessboard, int n) {
