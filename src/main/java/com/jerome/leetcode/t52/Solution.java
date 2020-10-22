@@ -1,4 +1,4 @@
-package com.jerome.leetcode.t311;
+package com.jerome.leetcode.t52;
 
 class Solution {
 
