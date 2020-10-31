@@ -59,4 +59,38 @@ public class LinkedList<E> {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node<E> head = dummyHead.getNext();
+        while (head != null) {
+            sb.append(head.getVal()).append(" -> ");
+            head = head.getNext();
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Node<Integer> head = new Node<>(1);
+        Node<Integer> n1 = new Node<>(2);
+        head.setNext(n1);
+        Node<Integer> n2 = new Node<>(3);
+        n1.setNext(n2);
+        Node<Integer> n3 = new Node<>(4);
+        n2.setNext(n3);
+        System.out.println(head.toString());
+        Node reversedHead = reverse(head);
+        System.out.println(reversedHead);
+    }
+
+    private static Node<Integer> reverse(Node<Integer> head) {
+        if (head == null || head.getNext() == null) {
+            return head;
+        }
+        Node<Integer> reversedHead = reverse(head.getNext());
+        head.getNext().setNext(head);
+        head.setNext(null);
+        return reversedHead;
+    }
 }

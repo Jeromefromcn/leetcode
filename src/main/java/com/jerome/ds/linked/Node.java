@@ -26,4 +26,15 @@ public class Node<E> {
     public void setNext(Node<E> next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node<E> head = this;
+        while (head != null) {
+            sb.append(head.getVal()).append(" -> ");
+            head = head.next;
+        }
+        return sb.toString();
+    }
 }
