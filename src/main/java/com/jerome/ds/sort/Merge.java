@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class Merge {
     public static void main(String[] args) {
         Stopwatch sw = Stopwatch.createStarted();
-        int[] array = new int[]{5, 3, 7, 4, 1, 6, 9};
+        int[] array = new int[]{5, 3, 7, 4, 3, 1, 6, 9};
         int[] helper = new int[array.length];
         doMerge(array, helper, 0, array.length - 1);
 

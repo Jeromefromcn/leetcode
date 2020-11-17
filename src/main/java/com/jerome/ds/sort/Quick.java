@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class Quick {
     public static void main(String[] args) {
         Stopwatch sw = Stopwatch.createStarted();
-        int[] array = new int[]{5, 3, 7, 4, 1, 6, 2};
+        int[] array = new int[]{4, 5, 6, 3, 2, 1};
         doQuick(array, 0, array.length - 1);
 
         System.out.println(sw.elapsed(TimeUnit.NANOSECONDS));
